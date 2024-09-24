@@ -1,0 +1,13 @@
+/Users/kyle/RiderProjects/Aurora Comics/Aurora Comics/obj/Debug/net8.0/Aurora Comics.csproj.AssemblyReference.cache
+/Users/kyle/RiderProjects/Aurora Comics/Aurora Comics/obj/Debug/net8.0/Aurora Comics.GeneratedMSBuildEditorConfig.editorconfig
+/Users/kyle/RiderProjects/Aurora Comics/Aurora Comics/obj/Debug/net8.0/Aurora Comics.AssemblyInfoInputs.cache
+/Users/kyle/RiderProjects/Aurora Comics/Aurora Comics/obj/Debug/net8.0/Aurora Comics.AssemblyInfo.cs
+/Users/kyle/RiderProjects/Aurora Comics/Aurora Comics/obj/Debug/net8.0/Aurora Comics.csproj.CoreCompileInputs.cache
+/Users/kyle/RiderProjects/Aurora Comics/Aurora Comics/bin/Debug/net8.0/Aurora Comics.deps.json
+/Users/kyle/RiderProjects/Aurora Comics/Aurora Comics/bin/Debug/net8.0/Aurora Comics.dll
+/Users/kyle/RiderProjects/Aurora Comics/Aurora Comics/bin/Debug/net8.0/Aurora Comics.pdb
+/Users/kyle/RiderProjects/Aurora Comics/Aurora Comics/obj/Debug/net8.0/XamlC.stamp
+/Users/kyle/RiderProjects/Aurora Comics/Aurora Comics/obj/Debug/net8.0/Aurora Comics.dll
+/Users/kyle/RiderProjects/Aurora Comics/Aurora Comics/obj/Debug/net8.0/refint/Aurora Comics.dll
+/Users/kyle/RiderProjects/Aurora Comics/Aurora Comics/obj/Debug/net8.0/Aurora Comics.pdb
+/Users/kyle/RiderProjects/Aurora Comics/Aurora Comics/obj/Debug/net8.0/ref/Aurora Comics.dll

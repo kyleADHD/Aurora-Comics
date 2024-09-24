@@ -1,0 +1,85 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Aurora_Comics.EReader"
+             Title="EReader"
+             BackgroundColor="Black">
+    <Grid BackgroundColor="Black">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Image Grid.Row="0"
+               HeightRequest="25"
+               Scale="1"
+               ZIndex="2"
+               HorizontalOptions="Start"
+               Source="back.png"
+               Margin="{OnPlatform WinUI='5,20,0,0',Android='5,35,0,0',iOS='20,-15,5,0'}"
+               VerticalOptions="Center">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer x:Name="BackImage" Tapped="BackImage_Tapped" />
+            </Image.GestureRecognizers>
+        </Image>
+
+        <CarouselView Grid.Row="1"
+                      x:Name="Collection"
+                      HorizontalOptions="FillAndExpand"
+                      CurrentItemChanged="Collection_CurrentItemChanged"
+                      VerticalOptions="FillAndExpand"
+                      ItemsSource="{Binding Images}">
+            <CarouselView.ItemTemplate>
+                <DataTemplate>
+                    <Image HorizontalOptions="FillAndExpand"
+                           VerticalOptions="FillAndExpand"
+                           Aspect="AspectFit"
+                           Source="{Binding MySource}">
+                        <Image.GestureRecognizers>
+                            <PinchGestureRecognizer PinchUpdated="OnPinchUpdated" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
+
+        <StackLayout Grid.Row="1"
+                     Orientation="Vertical"
+                     HorizontalOptions="CenterAndExpand"
+                     VerticalOptions="End"
+                     BackgroundColor="Transparent"
+                     Padding="10">
+            <Frame HorizontalOptions="CenterAndExpand"
+                   CornerRadius="20"
+                   Scale="0.8"
+                   HeightRequest="50"
+                   WidthRequest="100"
+                   BackgroundColor="Gray">
+                <Label x:Name="PageCount"
+                       Text="{Binding PageCountString}"
+                       HorizontalOptions="FillAndExpand"
+                       HorizontalTextAlignment="Center"
+                       TextColor="White"
+                       FontSize="14"
+                       FontAttributes="Bold" />
+            </Frame>
+
+            <IndicatorView x:Name="indicatorView"
+                 IndicatorColor="LightGray"
+                 SelectedIndicatorColor="Yellow"
+                 HorizontalOptions="Center"
+                 ItemsSource="{x:Reference Collection}" />
+        </StackLayout>
+
+        <Grid Grid.Row="2" VerticalOptions="Fill" Margin="0,0,0,0" >
+            <StackLayout IsVisible="{Binding IsDownloading}" BackgroundColor="#80000000" x:Name="downloadStack" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <ActivityIndicator Color="White" IsRunning="{Binding IsDownloading}" Margin="0,20,0,0" Scale="1.5" x:Name="acty" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" />
+                <StackLayout Margin="20">
+                    <Label Text="{Binding DownloadProgressInfo.Progress, StringFormat='{0:P0}'}" FontSize="22" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" x:Name="progressLbl" TextColor="White" />
+                    <ProgressBar x:Name="Download" Progress="{Binding DownloadProgressInfo.Progress}" Margin="10,20,10,0"  HorizontalOptions="Fill" ProgressColor="#228494" />
+                    <Label Text="{Binding DownloadProgressInfo.Speed, StringFormat='Speed: {0:F2} MB/s'}" Margin="0,20,0,0" FontSize="22" HorizontalOptions="CenterAndExpand" x:Name="SpeedLbl" TextColor="White" />
+                </StackLayout>
+            </StackLayout>
+        </Grid>
+    </Grid>
+</ContentPage>
